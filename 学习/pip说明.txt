@@ -1,0 +1,46 @@
+一、pip install 安装指定版本的包
+要用 pip 安装指定版本的 Python 包，只需通过 == 操作符 指定。
+pip install robotframework == 2.8.7
+将安装robotframework 2.8.7 版本。
+pip3 install --upgrade pip ##升级pip到最新版本
+回到顶部
+二、pip install  -i  国内镜像文件
+国内镜像：
+http://pypi.douban.com/simple/ 豆瓣
+http://mirrors.aliyun.com/pypi/simple/ 阿里
+http://pypi.hustunique.com/simple/ 华中理工大学
+http://pypi.sdutlinux.org/simple/ 山东理工大学
+http://pypi.mirrors.ustc.edu.cn/simple/ 中国科学技术大学
+https://pypi.tuna.tsinghua.edu.cn/simple 清华
+1、临时使用，添加“-i”或“--index”参数
+　　pip install -i http://pypi.douban.com/simple/ flask
+2、配制成默认的，修改默认文件：pip.ini
+　　[global]  
+　　index-url=http://mirrors.aliyun.com/pypi/simple/  
+　　[install]  
+　　trusted-host=mirrors.aliyun.com  
+ 
+三、pip安装时-U参数是什么作用？
+pip install -h 就有说明了，就是 --upgrade，意思是如果已安装就升级到最新版。
+-U 是升级 原来已经安装的包，如果有新版本，不带U不会装新版，带上才会更新到最新版本。
+ 
+
+四、Python安装pip包的时候权限出现问题
+sudo解决了权限问题，但是pip安装有个本地缓存目录，如果是用sudo，这个目录会写到root用户的home目录下（一般是/root），不用sudo，就写到当前用户home目录下（一般是/home/username）
+sudo也提供了选项 -h ，表示用sudo的权限，但又是用当前用户的home目录，所以最佳方式是：sudo -h pip install -U Pillow
+
+五.pip install遇到编码问题
+错误：UnicodeDecodeError: 'ascii' codec can't decode byte 0xd5 in position 34: ordinal not in range(128)  
+　　import sys  
+　　reload(sys)  
+　　sys.setdefaultencoding('gbk') 
+注：sys.setdefaultencoding时为什么老是得不到提示的原因?
+　　早些版本的python是只要写这两句就可以了，而较高的python必须要reload(sys)一下。
+ 
+
+六.没有python-pip包就执行命令
+错误:yum安装python-pip过程中，提示“没有可用软件包 python-pip”
+解决方案：
+执行命令 yum -y install epel-release
+行成功之后，再次执行 yum install python-pip
+对安装好的pip进行升级 pip install --upgrade pip

@@ -1,0 +1,20 @@
+链接githob服务器:
+git init ## 进入git模式
+git add 文件名/目录名 ##传送文件到暂存目录
+git status #检测一下暂存区文件
+git config --global user.name "账户名"
+git config --global user.email "邮箱"
+git commit -m '文件注释日志'
+git remote add 仓库小名 仓库链接  ##传送暂存目录的文件到仓库
+##如果仓库小名已经存在 可以用 
+git remote rm 仓库小名  ##这样可以删除已经存在的仓库小名
+git push 仓库小名 master 
+
+git pull --rebase 仓库小名 master ##解决error: failed to push some refs to 的问题
+git clone 仓库目录  ##复制目标仓库里的文件到我的文件夹里
+
+
+
+vim *.py
+:write 存储 ##冒号一定要输入
+:quit  退出 ##冒号一定要输入

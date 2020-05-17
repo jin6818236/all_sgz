@@ -1,0 +1,51 @@
+css选择器介绍：
+在css中选择器是一种模式，用于选择需要添加样式的元素，css对html页面中的元素实现一对一，一对多或者多对一的控制，都需要用到css选择器，html页面中的元素就是通过css选择器进行控制的；
+css选择器的基本语法
+类选择器：元素的class属性，比如class="box"表示选取class为box的元素；
+
+ID选择器：元素的id属性，比如id="box"表示选取id为box的元素；
+
+元素选择器：直接选择文档元素，比如p表示选择所有的p元素，div表示选择所有的div元素；
+
+属性选择器：选择具有某个属性的元素，如*[title]表示选择所有包含title属性的元素、a[href]表示选择所有带有href属性的a元素等；
+
+后代选择器：选择包含元素后代的元素，如li a表示选取所有li 下所有a元素；
+
+子元素选择器：选择作为某元素子元素的元素，如h1 > strong表示选择父元素为h1 的所有 strong 元素；
+
+相邻兄弟选择器：选择紧接在另一元素后的元素，且二者有相同父元素，如h1 + p表示选择紧接在 h1 元素之后的所有p元素；
+
+scrapy 中的css使用方法
+
+以a元素来举例说明
+
+response.css('a')：返回的是selector对象；
+
+response.css('a').extract()：返回的是a标签对象；
+
+response.css('a::text').extract_first()：返回的是第一个a标签中文本的值；
+
+response.css('a::attr(href)').extract_first()：返回的是第一个a标签中href属性的值；
+
+response.css('a[href*=image]::attr(href)').extract()：返回所有a标签中href属性包含image的值；
+
+response.css('a[href*=image] img::attr(src)').extract()：返回所有a标签下image标签的src属性；
+
+表达式书写方式	表达式意义
+#box	选取id为box的元素
+.box	选取class为box的元素
+p	选择所有 p 元素
+div img	选取div下的img元素
+div,img	选择所有 div 元素和所有 img 元素
+div#box	选取 id为box的div元素
+div>p	选择父元素为 div 元素的所有 p 元素
+[title~=flower]	选择 title 属性包含单词 "flower" 的所有元素
+a[href="/page/2"]	选取href属性为/page/2的a元素
+a[href^="/page"]	选取href属性以/page开头的a元素
+a[href$=".png"]	选取href属性以png结尾的a元素
+上一节中我们使用XPATH选择器获取了csdn中今日推荐的标题，现在我们用CSS选择器来试着
+
+作者：暖A暖
+链接：https://www.jianshu.com/p/278a4ca6d0c1
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
