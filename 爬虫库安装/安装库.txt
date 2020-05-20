@@ -1,0 +1,135 @@
+1、网络安装wheel；
+2、本地安装lxml；lxml下载地址
+3、本地安装pyWin32；pyWin32下载地址
+4、本地安装Twisted；Twisted下载地址
+5、网络安装Scrapy；
+
+因为最近学了python，有时候老想在linux里边写点东西，但是linux的环境是python2.x的，但有个问题2.x和3.x是不太兼容的，还有是我windows的环境是python3.x，接触的就是3.x，用2.x有些不习惯。所以就想升级一下。
+
+提示：在开始升级之前一定记得查看一下自己原本的python版本是多少，最后配置pip3和yum的时候会用到。
+
+[root@bogon ~]# python -V
+Python 2.7.5
+1、安装必备软件
+
+# yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel gcc
+2、下载Python3.8
+
+新建个/usr/download 文件夹
+
+# mkdir /usr/download
+在download文件夹下下载安装包（/usr/download )
+
+#cd /usr/download
+# wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz
+#解压文件
+# tar -xvf Python-3.8.0.tgz
+3、安装Python3
+
+#创建安装文件的路径
+# mkdir /usr/local/python3
+4、编译
+
+在解压的文件夹下(/usr/download/python3.8.0)
+
+[root@bogon Python-3.8.0]# pwd
+
+/usr/download/Python-3.8.0
+
+[root@bogon download]#  cd Python-3.8.0
+[root@bogon download]# ./configure --prefix=/usr/local/python3
+5、安装
+
+（在解压的文件夹下 /usr/download/python3.6.4)
+
+# make
+# make install    //先make再make install
+
+6、创建新版本的软链接
+
+执行这一步的作用是让我们安装的python3可以通过直接输入python来使用。
+
+修改旧版本
+
+# mv /usr/bin/python /usr/bin/python_bak
+创建新的软连接
+
+# ln -s /usr/local/python3/bin/python3 /usr/bin/python
+
+
+exit()是退出python命令行
+
+检查python的版本
+
+# python -V
+7、配置
+
+上边完成之后，pip3是用不了的，需要进一步配置
+
+
+将/usr/local/python3/bin加入PATH
+
+#  vim ~/.bash_profile
+修改前：
+
+PATH=$PATH:$HOME/bin
+
+修改后如下：
+
+PATH=$PATH:$HOME/bin:/usr/local/python3/bin
+
+怕懒得敲的，可以直接复制下边这个去替换原本的配置文件，前提是你的配置文件也只有这么点。
+
+# .bash_profile
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+# User specific environment and startup programs
+PATH=$PATH:$HOME/bin:/usr/local/python3/bin
+export PATH
+变的就是PATH这个地方。
+
+保存退出后，执行以下命令，让上一步修改成功
+
+# source ~/.bash_profile
+完成！
+
+这样pip3就可以用了。
+
+
+
+8、问题
+
+这时候yum是不能用的
+
+1、这个时候我们只需要修改yum配置文件，将python版本只想以前的旧版就可以了。
+
+#vi /usr/bin/yum
+因为我的旧版本是2.7，所以将#!/usr/bin/python改为#!/usr/bin/python2.7就可以了！
+
+2、还有就是修改/usr/libexec/urlgrabber-ext-down文件，将python同样指向旧版本，就可以了,即：将#!/usr/bin/python改为#!/usr/bin/python2.7！
+
+#vi /usr/libexec/urlgrabber-ext-down
+把红框中的
+
+#!/usr/bin/python
+
+改成如下图
+
+#!/usr/bin/python2.7
+
+这样yum也就可以使用了
+
+这样就可以linux中python的升级
+
+
+
+我们可以在linux里边安装ipython，这个是python三剑客之一，比直接用交互式的python好很多，它有提示(按tab键)，还会自动缩进等。
+
+安装方法
+
+#pip3 install ipython
+然后直接在linux命令行输入ipython就可以用了
+
+#ipython
