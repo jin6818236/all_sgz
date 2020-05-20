@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://www.cnblogs.com/lsdb/p/9531338.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="origin">
+    <meta property="og:description" content="一、说明 1.1 背景说明 个人对PowerShell也不是很熟悉，开始的时候就突然看到开始菜单中多了个叫PowerShell的文件夹，后来一点就看到某个教程视频说PowerShell很厉害但也没怎么">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PowerShell使用教程 - 努力改个网名 - 博客园</title>
+    
+    <link rel="stylesheet" href="./PowerShell使用教程_files/blog-common.min.css">
+    <link id="MainCss" rel="stylesheet" href="./PowerShell使用教程_files/bundle-sea.min.css">
+    <link type="text/css" rel="stylesheet" href="./PowerShell使用教程_files/custom.css">
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./PowerShell使用教程_files/bundle-sea-mobile.min.css">
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/lsdb/rss">
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/lsdb/rsd.xml">
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/lsdb/wlwmanifest.xml">
+    <script src="./PowerShell使用教程_files/amp4ads-host-v0.js.下载"></script><script async="" src="./PowerShell使用教程_files/analytics.js.下载"></script><script src="./PowerShell使用教程_files/jquery-2.2.0.min.js.下载"></script>
+    <script src="./PowerShell使用教程_files/blog-common.min.js.下载"></script>
+    <script>
+        var currentBlogId = 336617;
+        var currentBlogApp = 'lsdb';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'sea';
+    </script>
+    
+    
+    
+<link rel="preload" href="./PowerShell使用教程_files/f.txt" as="script"><script type="text/javascript" src="./PowerShell使用教程_files/f.txt"></script><script src="./PowerShell使用教程_files/pubads_impl_2020050602.js.下载" async=""></script><link rel="prefetch" href="https://650d961e8cdd877a9cc878476b69ccf7.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html"><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-37/html/container.html"></head>
+<body>
+    <a name="top"></a>
+    
+    <!--done-->
+<div id="header">
+	
+<!--done-->
+<div class="header">
+	<div class="headerText">
+		<a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/lsdb/">努力改个网名</a>
+<br>
+		
+这短短的一生，我们最终都会失去；你不妨大胆一些，爱一个人，攀一座山，追一个梦。
+
+	</div>
+</div>
+
+
+</div>
+
+<div id="mytopmenu">
+	
+		<div id="mylinks">
+<a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+ &nbsp;
+
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/lsdb/">
+首页</a>
+ &nbsp;
+
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+ &nbsp;
+
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%8A%AA%E5%8A%9B%E6%94%B9%E4%B8%AA%E7%BD%91%E5%90%8D">
+联系</a> &nbsp;
+
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/lsdb/rss/">
+订阅</a>
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/lsdb/rss/">
+    <img src="./PowerShell使用教程_files/xml.gif" alt="订阅">
+</a>&nbsp;
+
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+
+</div>
+		<div id="mystats">随笔-
+439&nbsp;
+评论-
+114&nbsp;
+文章-
+7&nbsp;
+<!--trackbacks-<partial name="./Shared/_PingTrackCount.cshtml" model="BlogServer.Web.Models.DetailBlogPage" />-->
+
+</div>
+	
+</div>
+<div id="centercontent">
+	<div id="post_detail">
+<div class="post">
+	<h1 class="postTitle">
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/lsdb/p/9531338.html">PowerShell使用教程</a>
+</h1>
+	
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <h2>一、说明</h2>
+<h3>1.1 背景说明</h3>
+<p>个人对PowerShell也不是很熟悉，开始的时候就突然看到开始菜单中多了个叫PowerShell的文件夹，后来一点就看到某个教程视频说PowerShell很厉害但也没怎么听，再后来就看到kali也有了一些PowerShell的脚本这才意识到PowerShell应该确实有独到之处而且正在逐渐受到认可，不过我使用PowerShell是不久前网上看到篇文章说PowerShell可以算数所以常当个计算器使用。直到昨天看了《Windows PowerShell实战指南》才算有了比较完整的了解。</p>
+<p><img src="./PowerShell使用教程_files/1116722-20180824152516958-1578022858.png" alt=""></p>
+<p>&nbsp;</p>
+<h3>1.2 PowerShell是什么</h3>
+<p>很多人上来就什么基于.Net强无敌，首先作为用户我不关心你是什么技术，我首先想知道的是你提供的是什么东西、怎么用。</p>
+<p>PowerShell，从名字可以知道，他首先是一个shell，shell的意思就是和Linux的bash等一样、和原来的cmd一样就是在里边敲命令（可执行文件）使用；</p>
+<p>而Power就意味他是一个功能强大的shell，从面向用户而言，个人觉得其功能强大体现在以下几方面：</p>
+<p>（1） 微软态度。微软是真正的在推行PowerShell，包括Office等更多自家软件，底层都是调用PowerShell来实现。</p>
+<p>（2） 兼容性cmd。PowerShell包含原先cmd的所有命令，原先命令使用形式不变，在是在其基础上添加命令。</p>
+<p>（3） 对标Linux。PowerShell使用了Linux Shell的思想，也就是所有的系统操作、配置，都可以在shell中敲写命令实现。</p>
+<p>（4） 统一的命令格式和自包含的文档。基于前3点我们即可以说PowerShell已可与Linux Bash等一较高下，如果再加上后发优势那就可以让人相信PowerShell可以成功。对于bash等shell你觉得最大的缺点是什么？从我角度而言我觉得是成本很高，最开始是我不知道用什么命令不太记得使用什么命令我需要百度一下，二是我经常忘记命令参数格式怎么写要在良莠不齐的网上百度半天（man手册？对不起我真的经常没看懂，我博客之前写了不少关于shell命令的文章就是备忘用，网上那么多关于shell命令的文章也说明不是因为我特别蠢）。而这就是PowerShell的两个优点：第一点是PowerShell所有命令使用统一的cmdlet命令格式（也就是“动词-名词”的格式，比如get-process）会使人很容易记住；第二点这里所谓自包含是指你要干一件事你可以逐步找到要做的事所需的所有命令，即便你记不得命令你也可以很容易找到，你找到命令看文档就很容易知道怎么使用。</p>
+<p>当然powershell很好但也有着其劣势：</p>
+<p>（1）Linux和Windows系统本身定位的差异。Linux的免费稳定使其牢牢占据了服务器领域，Linux Shell命令是没有很多统一格式的因此工程师们要费很大的劲去学习，而当Linux占据工程师的大部分精力并塑造完他们的习惯后，工程师们也许并没有那么多精神和动力去学powershell。</p>
+<p>（2）来自Windows GUI的竞争。Windows上命令能干的事GUI也都能干也许效率慢一些但普通用户可不想去黑漆漆的界面敲感觉不受控制的命令。</p>
+<p>Linux占据了服务器工程师的日常，而Windows自身强大的GUI对普通用户有天然的亲和力，所以powershell能期望的目标用户是谁呢，Windows服务器运维工程师好像没见过专门设有这职位。</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>二、PowerShell使用</h2>
+<p>下边我们将假设我们对powershell一无所知，通过杀除一个notepad进程的操作过程，来看一下什么叫powershell的“统一的命令格式和自包含的文档”。</p>
+<p>我这里并不介绍一堆命令----命令是介绍不过来的我这里是win7到了win10你会看到多出一倍不止的命令，以后还会更多----而是介绍powershell的使用思路，其他工作都可借助类似的思路来进行。</p>
+<h3>2.1 启动PowerShell</h3>
+<p>方法一： 直接在cmd中执行powershell，切换为powershell</p>
+<p><img src="./PowerShell使用教程_files/1116722-20180824161045040-1841323711.png" alt=""></p>
+<p>方法二： 开始菜单中输入powershell启动powershell</p>
+<p>方法三：&nbsp; 开始菜单----附件----powershell启动</p>
+<p>带x86的是32位的，不带的是64位的；带ies的是简单的ide</p>
+<p><img src="./PowerShell使用教程_files/1116722-20180824160816187-472885039.png" alt=""></p>
+<p>&nbsp;</p>
+<h3>2.2 使用powershell</h3>
+<p>powershell启动后界面如下</p>
+<p><img src="./PowerShell使用教程_files/1116722-20180824163651149-1281605152.png" alt="" width="760" height="155"></p>
+<p>&nbsp;</p>
+<h4>2.1.1 get-help查看帮助</h4>
+<p>我们一无所知，所以我们输入help试一下，很好，powershell确实支持help</p>
+<p>（不过我们前边说过powershell命令是cmdlet格式，help也使用cmdlet格式，help只是get-help的一个别名）</p>
+<p><img src="./PowerShell使用教程_files/1116722-20180824175855763-1101651480.png" alt="" width="764" height="739"></p>
+<p>&nbsp;</p>
+<h4>2.2.2 get-command查看有哪些命令</h4>
+<p>在确定powershell支持get-help之后，首先我们需要知道powershell支持哪些命令，在上图get-help中可以看到可以使用get-command查看powershell支持的命令</p>
+<p>CommandType列，表示命令类型，Alias是别名、Cmdlet是powershell格式的命令、Function是函数</p>
+<p>Name列，就是命令</p>
+<p>Definition列，命令功能的简单描述</p>
+<p><img src="./PowerShell使用教程_files/1116722-20180824165550891-1339179656.png" alt="" width="763" height="404"></p>
+<p>&nbsp;</p>
+<h4>2.2.3 get-command缩小范围</h4>
+<p>上面的命令太多了，我们需要缩小范围以确定类似ps功能的命令在powershell中是什么（当然我们说过powershell兼容cmd所以可以直接用ps，但这不是我们这里想要的）</p>
+<p>查看信息都是get-开头，所以我们猜测查看进程的命令也以get-开头，执行get-command get-*试一下</p>
+<p>结果如下图所示，列出了所有get开头的命令，其中我们看到有一个叫get-process的命令，一看就是获取进程信息的</p>
+<p><img src="./PowerShell使用教程_files/1116722-20180824172257894-320791596.png" alt=""></p>
+<p>&nbsp;</p>
+<h4>2.2.4 get-process查找进程</h4>
+<p>我们将命令锁定在了get-process但是我们不知道这个命令怎么用，2.2.1中说可以通过get-help command的形式查看帮助，我们也试一下</p>
+<p><img src="./PowerShell使用教程_files/1116722-20180824173509946-267752245.png" alt=""></p>
+<p>可以看到所有选项都是带中括号的，所以直接执行get-process就可以了</p>
+<p>但是可以猜测，没有任何过滤条件返回的肯定是所有进程列表这需要过滤，可以看到-name参数可以过滤进程名，为保险起见我们还加上*号通配符</p>
+<p>整个要执行的命令就是：get-process -name *notepad*</p>
+<p><img src="./PowerShell使用教程_files/1116722-20180824174142230-194162964.png" alt=""></p>
+<p>&nbsp;</p>
+<h4>2.2.5 stop-process杀除进程</h4>
+<p>第一个思路是：在get-help get-process中已看到相关链接中有stop-process，这大概率是杀除进程的命令</p>
+<p>第二个思路是：获取进程是get-process，那么杀除进程也大概率是xxx-process</p>
+<p>执行：get-command *process</p>
+<p><img src="./PowerShell使用教程_files/1116722-20180824174829036-128617809.png" alt=""></p>
+<p>可以看到就5个命令，而其中只有stop-process比较像，一样使用get-help来查看帮助顺便确认是不是</p>
+<p><img src="./PowerShell使用教程_files/1116722-20180824175029302-692627812.png" alt=""></p>
+<p>显而易见确实是，而且杀除命令就是：stop-process -id pid</p>
+<p><img src="./PowerShell使用教程_files/1116722-20180824175519941-1609253583.png" alt=""></p>
+<p>&nbsp;</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block"><div id="BlogPostCategory">
+    分类: 
+            <a href="https://www.cnblogs.com/lsdb/category/967925.html" target="_blank">Windows</a></div>
+
+
+    <div id="blog_post_info">
+<div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(9531338,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+        <a id="green_channel_follow" onclick="follow(&#39;211eb82c-1cff-e611-845c-ac853d9f53ac&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./PowerShell使用教程_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./PowerShell使用教程_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/lsdb/" target="_blank"><img src="./PowerShell使用教程_files/20180308093308.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/lsdb/">努力改个网名</a><br>
+            <a href="https://home.cnblogs.com/u/lsdb/followees/">关注 - 2</a><br>
+            <a href="https://home.cnblogs.com/u/lsdb/followers/">粉丝 - 185</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;211eb82c-1cff-e611-845c-ac853d9f53ac&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(9531338,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">11</span>
+    </div>
+    <div class="buryit" onclick="votePost(9531338,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+    <div class="clear"></div>
+    <div id="post_next_prev">
+
+    <a href="https://www.cnblogs.com/lsdb/p/9511977.html" class="p_n_p_prefix">« </a> 上一篇：    <a href="https://www.cnblogs.com/lsdb/p/9511977.html" title="发布于 2018-08-21 16:09">Python3 ElementTree.tostring()导致标签前辍变为ns0/ns1处理</a>
+    <br>
+    <a href="https://www.cnblogs.com/lsdb/p/9547380.html" class="p_n_p_prefix">» </a> 下一篇：    <a href="https://www.cnblogs.com/lsdb/p/9547380.html" title="发布于 2018-08-28 16:21">从函数调用过程中的堆栈变化理解缓冲区溢出</a>
+
+</div>
+</div>
+	<div class="postDesc">posted on 
+<span id="post-date">2018-08-24 18:13</span>&nbsp;
+<a href="https://www.cnblogs.com/lsdb/">努力改个网名</a>&nbsp;
+阅读(<span id="post_view_count">47246</span>)&nbsp;
+评论(<span id="post_comment_count">4</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=9531338" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(9531338);return false;">收藏</a></div>
+</div>
+
+
+<script src="./PowerShell使用教程_files/highlight.min.js.下载"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 336617, cb_blogApp = 'lsdb', cb_blogUserGuid = '211eb82c-1cff-e611-845c-ac853d9f53ac';
+    var cb_entryId = 9531338, cb_entryCreatedDate = '2018-08-24 18:13', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+    loadSideColumnAd();
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder">
+
+<div id="comment_pager_top">
+    
+</div>
+
+<!--done-->
+<br>
+<b>评论:</b>
+<div class="feedbackNoItems"><div class="feedbackNoItems"></div></div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			
+<a href="https://www.cnblogs.com/lsdb/p/9531338.html#4319131" class="layer">#1楼</a>
+<a name="4319131" id="comment_anchor_4319131"></a>
+
+
+				
+<span class="comment_date">2019-08-07 10:37</span>
+
+ | 
+
+            <a id="a_comment_author_4319131" href="https://www.cnblogs.com/lsh123/" target="_blank">沉疴</a>
+<br>
+				<div align="left">
+<div id="comment_body_4319131" data-format-type="Ubb" class="blog_comment_body cnblogs-ubb">
+    nice
+</div>
+        <div class="comment_vote">
+            <span class="comment_error" style="color: red"></span>
+            <a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4319131, &#39;Digg&#39;, this.parentElement, false);">
+                支持(0)
+            </a>
+            <a href="javascript:void(0);" class="comment_burry" onclick="return voteComment(4319131, &#39;Bury&#39;, this.parentElement, false);">
+                反对(0)
+            </a>
+        </div>
+        <span id="comment_4319131_avatar" style="display:none">
+            https://pic.cnblogs.com/face/1023530/20170421222410.png
+        </span>
+&nbsp;&nbsp;
+
+<span class="comment_actions">
+    
+    
+    
+    
+</span>
+
+</div>
+			</div>
+			
+			
+		</div>
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			
+<a href="https://www.cnblogs.com/lsdb/p/9531338.html#4427491" class="layer">#2楼</a>
+<a name="4427491" id="comment_anchor_4427491"></a>
+
+
+				
+<span class="comment_date">2019-11-15 17:04</span>
+
+ | 
+
+            <a id="a_comment_author_4427491" href="https://www.cnblogs.com/rickons/" target="_blank">rickon</a>
+<br>
+				<div align="left">
+<div id="comment_body_4427491" data-format-type="Ubb" class="blog_comment_body cnblogs-ubb">
+    通俗易懂，大写的赞
+</div>
+        <div class="comment_vote">
+            <span class="comment_error" style="color: red"></span>
+            <a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4427491, &#39;Digg&#39;, this.parentElement, false);">
+                支持(0)
+            </a>
+            <a href="javascript:void(0);" class="comment_burry" onclick="return voteComment(4427491, &#39;Bury&#39;, this.parentElement, false);">
+                反对(0)
+            </a>
+        </div>
+        <span id="comment_4427491_avatar" style="display:none">
+            https://pic.cnblogs.com/face/775005/20151112105529.png
+        </span>
+&nbsp;&nbsp;
+
+<span class="comment_actions">
+    
+    
+    
+    
+</span>
+
+</div>
+			</div>
+			
+			
+		</div>
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			
+<a href="https://www.cnblogs.com/lsdb/p/9531338.html#4548742" class="layer">#3楼</a>
+<a name="4548742" id="comment_anchor_4548742"></a>
+
+
+				
+<span class="comment_date">2020-04-12 20:20</span>
+
+ | 
+
+            <a id="a_comment_author_4548742" href="https://home.cnblogs.com/u/1961452/" target="_blank">北北~~</a>
+<br>
+				<div align="left">
+<div id="comment_body_4548742" data-format-type="Markdown" class="blog_comment_body cnblogs-markdown">
+    <p>比那些大白话的强多了，大大的赞</p>
+
+</div>
+        <div class="comment_vote">
+            <span class="comment_error" style="color: red"></span>
+            <a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4548742, &#39;Digg&#39;, this.parentElement, false);">
+                支持(0)
+            </a>
+            <a href="javascript:void(0);" class="comment_burry" onclick="return voteComment(4548742, &#39;Bury&#39;, this.parentElement, false);">
+                反对(0)
+            </a>
+        </div>
+        
+&nbsp;&nbsp;
+
+<span class="comment_actions">
+    
+    
+    
+    
+</span>
+
+</div>
+			</div>
+			
+			
+		</div>
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+			
+<a href="https://www.cnblogs.com/lsdb/p/9531338.html#4551677" class="layer">#4楼</a>
+<a name="4551677" id="comment_anchor_4551677"></a>
+
+        <span id="comment-maxId" style="display:none">4551677</span>
+        <span id="comment-maxDate" style="display:none">2020/4/15 下午11:30:29</span>
+
+				
+<span class="comment_date">2020-04-15 23:30</span>
+
+ | 
+
+            <a id="a_comment_author_4551677" href="https://home.cnblogs.com/u/1680575/" target="_blank">呼噜猫会跳舞</a>
+<br>
+				<div align="left">
+<div id="comment_body_4551677" data-format-type="Markdown" class="blog_comment_body cnblogs-markdown">
+    <p>深入浅出，很好</p>
+
+</div>
+        <div class="comment_vote">
+            <span class="comment_error" style="color: red"></span>
+            <a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(4551677, &#39;Digg&#39;, this.parentElement, false);">
+                支持(0)
+            </a>
+            <a href="javascript:void(0);" class="comment_burry" onclick="return voteComment(4551677, &#39;Bury&#39;, this.parentElement, false);">
+                反对(0)
+            </a>
+        </div>
+        
+&nbsp;&nbsp;
+
+<span class="comment_actions">
+    
+    
+    
+    
+</span>
+
+</div>
+			</div>
+			
+			
+		</div>
+
+
+
+
+<div id="comment_pager_bottom">
+    
+</div>
+
+
+</div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/lsdb/p/9531338.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/lsdb/p/9531338.html#top">返回顶部</a></div>
+    <div id="comment_form_container" style="visibility: visible;"><div class="login_tips">
+    注册用户登录后才能发表评论，请 
+    <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a>
+     或 
+    <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，
+    <a href="https://www.cnblogs.com/">访问</a> 网站首页。
+</div></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"><a href="https://www.wenjuan.com/s/3uIjeq0/" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-博客园问卷调查&#39;)">【推荐】了解你才能更懂你，博客园首发问卷调查，助力社区新升级</a><br><a href="http://www.givinghunter.com/Inner.html?id=1&amp;bk=six" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-极客令&#39;)">【推荐】悬赏10万，基于领先NLP技术，开发新一代交互式文本智能机器人</a><br><a href="http://www.ucancode.com/index.htm" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-ucancode&#39;)">【推荐】超50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="https://www.slidestalk.com/m/169" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-智慧医疗&#39;)">【推荐】5.23智慧医疗前沿技术沙龙，特邀多位医疗公司CEO上线直播</a><br></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="./PowerShell使用教程_files/gpt.js.下载"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;" data-google-query-id="CJvyxfu0w-kCFQt5vQodwsEMtg"><div id="google_ads_iframe_/1090369/C1_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C1_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C1_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" data-google-container-id="1" data-load-complete="true" src="./PowerShell使用教程_files/saved_resource.html"></iframe></div></div>
+    </div>
+    <div id="under_post_news"><div class="recomm-block"><b>相关博文：</b><br>·  <a title="从零开始——PowerShell应用入门（全例子入门讲解）" href="https://www.cnblogs.com/lavender000/p/6935589.html" target="_blank" onclick="clickRecomItmem(6935589)">从零开始——PowerShell应用入门（全例子入门讲解）</a><br>·  <a title="回归Dos操作的快感，进入PowerShell世界" href="https://www.cnblogs.com/Terrylee/archive/2008/11/09/Windows-PowerShell-Overview.html" target="_blank" onclick="clickRecomItmem(1329918)">回归Dos操作的快感，进入PowerShell世界</a><br>·  <a title="PowerShell命令" href="https://www.cnblogs.com/chsword/archive/2011/10/17/PowerShell_2.html" target="_blank" onclick="clickRecomItmem(2215841)">PowerShell命令</a><br>·  <a title="初探Windows PowerShell" href="https://www.cnblogs.com/liuyuer/archive/2006/05/10/396289.html" target="_blank" onclick="clickRecomItmem(396289)">初探Windows PowerShell</a><br>·  <a title="PowerShell_零基础自学课程_1_初识PowerShell" href="https://www.cnblogs.com/volcanol/archive/2012/04/10/2441437.html" target="_blank" onclick="clickRecomItmem(2441437)">PowerShell_零基础自学课程_1_初识PowerShell</a><br>»  <a target="_blank" href="https://recomm.cnblogs.com/blogpost/9531338">更多推荐...</a></div></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;" data-google-query-id="CJzyxfu0w-kCFQt5vQodwsEMtg">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        <div id="google_ads_iframe_/1090369/C2_0__container__" style="border: 0pt none; width: 468px; height: 60px;"></div></div>
+    </div>
+    <div id="under_post_kb">
+<div class="itnews c_ad_block">
+    <b>最新 IT 新闻</b>:
+    <br>
+ ·              <a href="https://news.cnblogs.com/n/662402/" target="_blank">2020年拼多多致股东信文风突变 黄峥想说什么</a>
+            <br>
+ ·              <a href="https://news.cnblogs.com/n/662400/" target="_blank">《微软飞行模拟》内测计划于7月中旬开启</a>
+            <br>
+ ·              <a href="https://news.cnblogs.com/n/662399/" target="_blank">支付宝又改版了：收付款合并 出行首次挤入“四大金刚”</a>
+            <br>
+ ·              <a href="https://news.cnblogs.com/n/662398/" target="_blank">员工仅剩10余人 暴风：涉嫌信披违法违规 遭证监会立案调查</a>
+            <br>
+ ·              <a href="https://news.cnblogs.com/n/662397/" target="_blank">天猫精灵发布四款新品 阿里今年将砸100亿布局AIoT</a>
+            <br>
+    » <a href="https://news.cnblogs.com/" title="IT 新闻" target="_blank">更多新闻...</a>
+</div></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div></div>
+
+
+</div>
+<div id="leftcontent">
+	
+		<div id="leftcontentcontainer">
+			
+<div id="sidebar_news" class="newsItem"><!--done-->
+<div class="newsItem">
+	
+<div id="blog-news">
+    
+    <div id="profile_block">
+        昵称：
+        <a href="https://home.cnblogs.com/u/lsdb/">
+            努力改个网名
+        </a>
+        <br>
+        园龄：
+        <a href="https://home.cnblogs.com/u/lsdb/" title="入园时间：2017-03-02">
+            3年2个月
+        </a>
+        <br>
+        粉丝：
+        <a href="https://home.cnblogs.com/u/lsdb/followers/">
+            185
+        </a>
+        <br>
+        关注：
+        <a href="https://home.cnblogs.com/u/lsdb/followees/">
+            2
+        </a>
+        <div id="p_b_follow">
+<a href="javascript:void(0)" onclick="follow(&#39;211eb82c-1cff-e611-845c-ac853d9f53ac&#39;)">+加关注</a></div>
+        <script>getFollowStatus('211eb82c-1cff-e611-845c-ac853d9f53ac');</script>
+    </div>
+</div>
+</div>
+
+</div>
+
+<div id="sidebar_ad"></div>
+			<div id="calendar"><div id="blog-calendar" style="">
+
+<table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar" border="0">
+    <tbody>
+        <tr>
+            <td colspan="7">
+                <table class="CalTitle" cellspacing="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="CalNextPrev">
+                                <a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2020/04/21&#39;); return false;">&lt;</a>
+                            </td>
+                            <td align="center">2020年5月</td>
+                            <td align="right" class="CalNextPrev">
+                                <a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2020/06/21&#39;); return false;">&gt;</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+                    <th class="CalDayHeader" align="center" abbr="日" scope="col">日</th>
+                    <th class="CalDayHeader" align="center" abbr="一" scope="col">一</th>
+                    <th class="CalDayHeader" align="center" abbr="二" scope="col">二</th>
+                    <th class="CalDayHeader" align="center" abbr="三" scope="col">三</th>
+                    <th class="CalDayHeader" align="center" abbr="四" scope="col">四</th>
+                    <th class="CalDayHeader" align="center" abbr="五" scope="col">五</th>
+                    <th class="CalDayHeader" align="center" abbr="六" scope="col">六</th>
+        </tr>
+            <tr>
+                            <td class="CalOtherMonthDay" align="center">26</td>
+                            <td class="CalOtherMonthDay" align="center">27</td>
+                            <td class="CalOtherMonthDay" align="center">28</td>
+                            <td class="CalOtherMonthDay" align="center">29</td>
+                            <td class="CalOtherMonthDay" align="center">30</td>
+                        <td class="" align="center">
+                            1
+                        </td>
+                    <td class="CalWeekendDay" align="center">
+                        2
+                    </td>
+            </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            3
+                        </td>
+                            <td class="" align="center">
+                                4
+                            </td>
+                            <td class="" align="center">
+                                5
+                            </td>
+                            <td class="" align="center">
+                                6
+                            </td>
+                            <td class="" align="center">
+                                7
+                            </td>
+                            <td class="" align="center">
+                                8
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            9
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            10
+                        </td>
+                            <td class="" align="center">
+                                11
+                            </td>
+                            <td class="" align="center">
+                                12
+                            </td>
+                            <td class="" align="center">
+                                13
+                            </td>
+                            <td class="" align="center">
+                                14
+                            </td>
+                            <td class="" align="center">
+                                15
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            16
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            17
+                        </td>
+                            <td class="" align="center">
+                                18
+                            </td>
+                            <td class="" align="center">
+                                19
+                            </td>
+                            <td class="" align="center">
+                                20
+                            </td>
+                            <td class="CalTodayDay" align="center">
+                                21
+                            </td>
+                            <td class="" align="center">
+                                22
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            23
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            24
+                        </td>
+                            <td class="" align="center">
+                                25
+                            </td>
+                            <td class="" align="center">
+                                26
+                            </td>
+                            <td class="" align="center">
+                                27
+                            </td>
+                            <td class="" align="center">
+                                28
+                            </td>
+                            <td class="" align="center">
+                                29
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            30
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            31
+                        </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                1
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                2
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                3
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                4
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                5
+                            </td>
+                        <td class="CalOtherMonthDay" align="center">
+                            6
+                        </td>
+                </tr>
+    </tbody>
+</table></div></div>                
+                    <script>loadBlogDefaultCalendar();</script><br>
+			<div id="blog-sidecolumn">
+<!-- 搜索 -->
+<div id="sidebar_search" class="sidebar-block">
+    <div id="sidebar_search" class="mySearch">
+        <h3 class="catListTitle">搜索</h3>
+        <div id="sidebar_search_box">
+            <div id="widget_my_zzk" class="div_my_zzk">
+                <input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk">
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- 常用链接 -->
+
+
+<!-- 最新随笔 -->
+
+
+
+<!-- 我的标签 -->
+<div id="sidebar_toptags" class="sidebar-block">
+    
+</div>
+
+<!-- 积分与排名 -->
+<div id="sidebar_scorerank" class="sidebar-block">
+    <h3>积分与排名</h3>
+<ul>
+    <li>
+        积分 - 
+670744
+    </li>
+    <li>
+        排名 - 
+290
+    </li>
+</ul>
+</div>
+
+<!-- 随笔分类、随笔档案、文章分类、新闻分类、相册、链接 -->
+<div id="sidebar_categories">
+    
+		<h3 class="catListTitle">
+
+随笔分类
+
+
+</h3>
+				<ul class="catList">
+			
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/998609.html" rel="" target="">
+    Android(8)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/972996.html" rel="" target="">
+    Crazy Talk(5)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/991478.html" rel="" target="">
+    Eclipse(7)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/1013269.html" rel="" target="">
+    Hadoop(2)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/957693.html" rel="" target="">
+    Java(12)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/958641.html" rel="" target="">
+    Kali(15)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/957696.html" rel="" target="">
+    Linux(92)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/957688.html" rel="" target="">
+    MySQL(12)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/957689.html" rel="" target="">
+    Oracle(11)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/1214341.html" rel="" target="">
+    Pentest(43)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/957694.html" rel="" target="">
+    Python(80)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/1076241.html" rel="" target="">
+    Reverse(7)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/1036189.html" rel="" target="">
+    Tomcat(2)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/1009645.html" rel="" target="">
+    Version Control(7)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/979254.html" rel="" target="">
+    VMware(5)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/957691.html" rel="" target="">
+    Weblogic(17)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/957692.html" rel="" target="">
+    WebSphere(9)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/967925.html" rel="" target="">
+    Windows(31)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/975310.html" rel="" target="">
+    计算机基础(33)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/980699.html" rel="" target="">
+    漏洞修复(41)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/category/958299.html" rel="" target="">
+    其他软件(28)
+</a>
+
+</li>
+			
+				</ul>
+		<h3 class="catListTitle">
+
+随笔档案
+
+
+</h3>
+				<ul class="catList">
+			
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2020/04.html" rel="" target="">
+    2020年4月(1)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2020/03.html" rel="" target="">
+    2020年3月(5)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2020/02.html" rel="" target="">
+    2020年2月(12)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2020/01.html" rel="" target="">
+    2020年1月(2)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2019/12.html" rel="" target="">
+    2019年12月(6)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2019/11.html" rel="" target="">
+    2019年11月(1)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2019/10.html" rel="" target="">
+    2019年10月(2)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2019/09.html" rel="" target="">
+    2019年9月(3)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2019/08.html" rel="" target="">
+    2019年8月(7)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2019/07.html" rel="" target="">
+    2019年7月(3)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2019/06.html" rel="" target="">
+    2019年6月(4)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2019/05.html" rel="" target="">
+    2019年5月(7)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2019/04.html" rel="" target="">
+    2019年4月(9)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2019/03.html" rel="" target="">
+    2019年3月(10)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2019/02.html" rel="" target="">
+    2019年2月(4)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2019/01.html" rel="" target="">
+    2019年1月(11)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2018/12.html" rel="" target="">
+    2018年12月(8)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2018/11.html" rel="" target="">
+    2018年11月(12)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2018/10.html" rel="" target="">
+    2018年10月(14)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2018/09.html" rel="" target="">
+    2018年9月(12)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2018/08.html" rel="" target="">
+    2018年8月(11)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2018/07.html" rel="" target="">
+    2018年7月(15)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2018/06.html" rel="" target="">
+    2018年6月(15)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2018/05.html" rel="" target="">
+    2018年5月(10)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2018/04.html" rel="" target="">
+    2018年4月(1)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2018/03.html" rel="" target="">
+    2018年3月(10)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2018/02.html" rel="" target="">
+    2018年2月(2)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2018/01.html" rel="" target="">
+    2018年1月(11)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2017/12.html" rel="" target="">
+    2017年12月(11)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2017/11.html" rel="" target="">
+    2017年11月(13)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2017/10.html" rel="" target="">
+    2017年10月(17)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2017/09.html" rel="" target="">
+    2017年9月(10)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2017/08.html" rel="" target="">
+    2017年8月(14)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2017/07.html" rel="" target="">
+    2017年7月(17)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2017/06.html" rel="" target="">
+    2017年6月(16)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2017/05.html" rel="" target="">
+    2017年5月(36)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2017/04.html" rel="" target="">
+    2017年4月(41)
+</a>
+
+</li>
+				<li class="catListItem"> 
+<a href="https://www.cnblogs.com/lsdb/archive/2017/03.html" rel="" target="">
+    2017年3月(56)
+</a>
+
+</li>
+			
+				</ul>
+
+
+</div>
+
+<!-- 最新评论 -->
+<div id="sidebar_recentcomments" class="sidebar-block">
+    <div id="recent_comments_wrap" class="RecentComment">
+    <h3 class="catListTitle">最新评论</h3>
+    <div class="RecentCommentBlock">
+        <ul>
+                    <li class="recent_comment_title"><a href="https://www.cnblogs.com/lsdb/p/9774307.html">1. Re:Python3+PyCharm+Django+Django REST framework开发教程</a></li>
+                    <li class="recent_comment_body"><p>3.4 的第三个导入from drest.serializers import Test<br>
+因该是 from drest.model import Test吧</p>
+</li>
+                    <li class="recent_comment_author">--爱Pyhon的小白</li>
+                    <li class="recent_comment_title"><a href="https://www.cnblogs.com/lsdb/p/10119668.html">2. Re:短网址是什么</a></li>
+                    <li class="recent_comment_body"><p>现在百度短网址也不行了，限制行业了，刚找了一家<a href="https://www.cnblogs.com/lsdb/p/9531338.html">新浪短网址</a>服务商，叫蓝鸟短链接，在线工具用着很方便，接口也很稳定，亲测的</p>
+</li>
+                    <li class="recent_comment_author">--anhwuio</li>
+                    <li class="recent_comment_title"><a href="https://www.cnblogs.com/lsdb/p/9531338.html">3. Re:PowerShell使用教程</a></li>
+                    <li class="recent_comment_body"><p>深入浅出，很好</p>
+</li>
+                    <li class="recent_comment_author">--呼噜猫会跳舞</li>
+                    <li class="recent_comment_title"><a href="https://www.cnblogs.com/lsdb/p/9391979.html">4. Re:openssl实现双向认证教程（服务端代码+客户端代码+证书生成）</a></li>
+                    <li class="recent_comment_body">@努力改个网名 嗯嗯，openssl提供的源码api不太好查找，现在只能用system调用openssl命令行方式执行了...</li>
+                    <li class="recent_comment_author">--LJccccc</li>
+                    <li class="recent_comment_title"><a href="https://www.cnblogs.com/lsdb/p/9391979.html">5. Re:openssl实现双向认证教程（服务端代码+客户端代码+证书生成）</a></li>
+                    <li class="recent_comment_body">@LJccccc 如果是调用函数生成，那得研究一下，如果是说执行系统命令这种方式来生成那就还好吧，用system、popen这些函数直接执行就完事了。 话说回来你不写c，又问c能不能用代码生成证书，这...</li>
+                    <li class="recent_comment_author">--努力改个网名</li>
+        </ul>
+    </div>
+</div>
+</div>
+
+
+
+<!-- 阅读排行榜 -->
+<div id="sidebar_topviewedposts" class="sidebar-block">
+    
+<div id="topview_posts_wrap">
+    <h3 class="catListTitle">阅读排行榜</h3>
+    <div id="TopViewPostsBlock">
+        <ul style="word-break:break-all">
+                    <li>
+                        <a href="https://www.cnblogs.com/lsdb/p/9254544.html">
+                            1. Wireshark使用教程（界面说明、捕获过滤器表达式、显示过滤器表达式）(87573)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/lsdb/p/9337342.html">
+                            2. Android Studio打包生成APK教程(75836)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/lsdb/p/7297731.html">
+                            3. zookeeper安装教程（zookeeper3.4.5为例）(75127)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/lsdb/p/9531338.html">
+                            4. PowerShell使用教程(47246)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/lsdb/p/6682545.html">
+                            5. kali菜单中各工具功能(44117)
+                        </a>
+                    </li>
+        </ul>
+    </div>
+</div>
+</div>
+
+<!-- 评论排行榜 -->
+
+
+<!-- 推荐排行榜 -->
+<div id="sidebar_topdiggedposts" class="sidebar-block">
+    
+<div id="topdigg_posts_wrap">
+    <div class="catListView">
+        <h3 class="catListTitle">推荐排行榜</h3>
+        <div id="TopDiggPostsBlock">
+            <ul style="word-break: break-all">
+                        <li>
+                            <a href="https://www.cnblogs.com/lsdb/p/9531338.html">
+                                1. PowerShell使用教程(11)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/lsdb/p/9254544.html">
+                                2. Wireshark使用教程（界面说明、捕获过滤器表达式、显示过滤器表达式）(9)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/lsdb/p/7171779.html">
+                                3. curl和wget的区别和使用(8)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/lsdb/p/9122425.html">
+                                4. PyCharm+QTDesigner+PyUIC使用教程(7)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/lsdb/p/7297731.html">
+                                5. zookeeper安装教程（zookeeper3.4.5为例）(5)
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div></div>
+                    <script>loadBlogSideColumn();</script></div>
+	
+</div>
+<!--done-->
+<div class="footer">
+	Powered by: <a href="http://www.cnblogs.com/">博客园</a>
+	Copyright © 2020 努力改个网名
+<br><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</div>
+
+
+
+
+
+
+    
+
+</body></html>
