@@ -1,0 +1,69 @@
+#安装Django模块
+pip install Django -i https://mirrors.aliyun.com/pypi/simple/
+1.pycharm安装djingo,步骤：
+	新建的时候要确保有一个应用，application name里输入应用名字。
+	继承python库，勾选inherit global site-packages。
+	运行命令 python manage.py runserver 8800 #创建一个服务器
+	manage.py runserver 80      # 可以暂时指定端口
+	如果要输入正常的话需要在编辑配置里面 HOST port 输入 8800 和 Run browser:输入http://127.0.0.1:8800/
+	启动名称就可以了
+
+配置URL
+在先前创建的 HelloWorld 目录下的 HelloWorld 目录新建一个 view.py 文件，并输入代码：
+from django.http import HttpResponse
+ 
+def hello(request):
+    return HttpResponse("Hello world ! ")
+接着，绑定 URL 与视图函数。打开 urls.py 文件，删除原来代码，将以下代码复制粘贴到 urls.py 文件中：
+from django.urls import path
+ 
+from . import view
+ 
+urlpatterns = [
+    path('', view.hello), #route 就是下级目录名称，有过有输入，要输入127.0.0.1:8800/目录名称才可以找到网址
+] 
+path() 函数
+Django path() 可以接收四个参数，分别是两个必选参数：route、view 和两个可选参数：kwargs、name。
+
+语法格式：
+path(route, view, kwargs=None, name=None)
+route: 字符串，表示 URL 规则，与之匹配的 URL 会执行对应的第二个参数 view。
+
+view: 用于执行与正则表达式匹配的 URL 请求。
+
+kwargs: 视图使用的字典类型的参数。
+
+name: 用来反向获取 URL。
+
+接下来就可以创建name.html了
+
+<h1>{{ hello }}</h1>
+从模板中我们知道变量使用了双括号。
+
+接下来我们需要向Django说明模板文件的路径，修改HelloWorld/settings.py，修改 TEMPLATES 中的 DIRS 为 [BASE_DIR+"/templates",]，
+
+我们现在修改 view.py，增加一个新的对象，用于向模板提交数据：
+from django.shortcuts import render
+ 
+def runoob(request):
+    context          = {}
+    context['hello'] = 'Hello World!'
+    return render(request, 'runoob.html', context)
+还要改urls.py文件里的代码
+from django.urls import path
+ 
+from . import view
+ 
+urlpatterns = [
+    path('runoob/', view.runoob),
+]
+
+可以看到，我们这里使用 render 来替代之前使用的 HttpResponse。render 还使用了一个字典 context 作为参数。
+
+context 字典中元素的键值 hello 对应了模板中的变量 {{ hello }}。
+
+再次访问 http://127.0.0.1:8000/runoob，可以看到页面
+
+
+
+

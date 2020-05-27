@@ -1,0 +1,15 @@
+#安装Django模块
+pip install Django -i https://mirrors.aliyun.com/pypi/simple/
+#创建第一个项目
+django-admin.py startproject one
+#启动服务器
+python manage.py runserver 0.0.0.0:8800
+#网站地址：127.0.0.1:8800
+#创建APP
+python manage.py startapp app01
+#打开sttings.py文件修改加入APP名称
+找到templates要想使用下面的html文件，
+修改'DIRS': [BASE_DIR+"/templates",],    #/templates是项目下目录名称
+#打开view.py文件修改地址
+#打开urls.py文件加入网页
+

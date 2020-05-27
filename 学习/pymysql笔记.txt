@@ -1,0 +1,28 @@
+#安装pymysql
+pip install pymysql -i https://mirrors.aliyun.com/pypi/simple/
+#分析函数connect请求数据库命令
+sql = pymysql.connect(host = "主机地址", port ="端口3306", user = "用户名", passwold = "用户密码", db = "数据库名称", charset = "utf8" )
+#分析函数cursor()选择一个数据库选项
+sql.cursor()
+#分析喊出execute()执行命令
+cursor = sql.cursor()
+cursor.execute('DROP TABLE IF EXISTS name') #执行数据库命令如果有则删除name表。
+
+#分析SQL命令CREATE TABLE创建表
+CREATE TABLE name 名称 类型 (长度) ，名称 类型 (长度) ，名称 类型 (长度) ，名称 类型 (长度) ,
+#分析SQL命令PRIMARY KEY('名称')字段中赋予健,UNIQUE KEY索引中赋予类型 ENGINE 选项中赋予自动递增12 DEFAULT CHARSET字段中赋予字符集
+PRIMARY KEY('名称'),UNIQUE KEY `title`(`title`))ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4
+#下面是执行SQL代码
+sql_biao = '''CREATE TABLE name
+price VARCHAR(10),
+title VARCHAR(50),
+amount VARCHAR(265),
+stars VARCHAR(265),
+address VARCHAR(265),
+PRIMARY KEY (`price`),
+UNIQUE KEY `title`(`title`))ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4'''
+cursor.execute(sql_biao) #执行数据库命令 创建name表
+	
+
+
+

@@ -1,0 +1,19 @@
+===================WIN10下安装爬虫模块=====================================
+#安装requests模块
+pip install requests -i https://mirrors.aliyun.com/pypi/simple/
+#安装parsel模块
+pip install parsel -i https://mirrors.aliyun.com/pypi/simple/
+#安装lxml模块
+pip install lxml -i https://mirrors.aliyun.com/pypi/simple/
+#安装pymysql模块
+pip install pymysql -i https://mirrors.aliyun.com/pypi/simple/
+#安装wheel模块
+pip install wheel -i https://mirrors.aliyun.com/pypi/simple/
+#安装pyWin32模块
+pip install pyWin32 -i https://mirrors.aliyun.com/pypi/simple/
+#安装Twisted模块
+pip install https://download.lfd.uci.edu/pythonlibs/s2jqpv5t/Twisted-20.3.0-cp38-cp38-win_amd64.whl
+#安装scrapy模块
+pip install scrapy -i https://mirrors.aliyun.com/pypi/simple/
+#安装Numpy模块
+pip install Numpy -i https://mirrors.aliyun.com/pypi/simple/
